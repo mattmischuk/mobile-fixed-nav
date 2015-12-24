@@ -1,0 +1,43 @@
+
+$horizontal-scroll-nav-height: 50px;
+$horizontal-scroll-nav-base-color: #790078;
+
+.horizontal-scroll-nav {
+  -webkit-overflow-scrolling: touch;
+  height: $horizontal-scroll-nav-height;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 100;
+
+  // decorative
+  background-color: $horizontal-scroll-nav-base-color;
+
+  &--fixed { position: fixed; }
+
+  &--bottom {
+    bottom: 0;
+    left: 0;
+  }
+
+  &__item {
+    display: inline-block;
+
+    // decorative
+    background-color: lighten($horizontal-scroll-nav-base-color, 5%);
+    padding: 0.5rem;
+    height: 100%;
+    color: #fff;
+    text-decoration: none;
+
+    &:nth-child(odd) {
+      background-color: lighten($horizontal-scroll-nav-base-color, 10%);
+    }
+  }
+}
+
+// Applies margin to parent
+.has-horizontal-scroll-nav--bottom {
+  margin-bottom: $horizontal-scroll-nav-height;
+}
